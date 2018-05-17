@@ -24,7 +24,7 @@ void ProgressBar::showProgressBar(uint32_t ui32_increase){
   showConsoleCursor(false);
   uint32_t ui32_newIncrease = ui32_roundValue((float)ui32_increase*(float)this->f_maxConstant);
   bool b_flagPrintPercentageProgress = false;
-  if (ui32_newIncrease > ui32_barValue){
+  if ((float)ui32_increase*(float)this->f_maxConstant > ui32_barValue){
     b_flagPrintPercentageProgress = true;
   }
   if(this->ui32_maxBar >= ui32_newIncrease){
@@ -35,7 +35,7 @@ void ProgressBar::showProgressBar(uint32_t ui32_increase){
     }
     if (b_flagPrintPercentageProgress == true){
       this->ui32_barValue = ui32_newIncrease;
-      this->f_percentageValue = (float)ui32_increase*(float)this->f_maxConstant/(float)this->ui32_maxBar*100;
+      this->f_percentageValue = (float)ui32_increase*(float)this->f_maxConstant/(float)this->ui32_maxBar*(float)100;
     }
     while(ui32_newIncrease < this->ui32_maxBar){
       printf("%c", this->c_shadowBar);
@@ -45,7 +45,7 @@ void ProgressBar::showProgressBar(uint32_t ui32_increase){
       showConsoleCursor(true);
     }
     printf("%c", this->c_frame);
-    printf(" - %.2f%c", f_percentageValue, 37);
+    printf(" - %.2f%c", (float)this->f_percentageValue, 37);
   }
 }
 
