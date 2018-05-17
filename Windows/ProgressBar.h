@@ -61,7 +61,7 @@ class ProgressBar{
       \param ui8_maxBar an 8-bit integer (a.k.a. byte) argument.
       \param b_printShadow a boolean variable.
     */
-    ProgressBar(uint32_t ui32_maxBar, uint8_t ui32_maxValue, bool b_printShadow);
+    ProgressBar(uint32_t ui32_maxBar, uint8_t ui32_maxValue);
     //! Neuron Destructor
     /*!
       This destructor will delete this object.

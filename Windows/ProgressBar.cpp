@@ -1,19 +1,12 @@
 #include "ProgressBar.h"
 
-ProgressBar::ProgressBar(uint32_t ui32_maxBar, uint8_t ui32_maxValue, bool b_printShadow){
+ProgressBar::ProgressBar(uint32_t ui32_maxBar, uint8_t ui32_maxValue){
   this->c_shadowBar = 177;
   this->c_progressBar = 219;
   this->c_frame = 179;
   this->f_percentageValue = 0;
   this->ui32_maxBar = ui32_maxBar;
   this->f_maxConstant = (float)ui32_maxBar/(float)ui32_maxValue;
-  if(b_printShadow == true){
-    printf("%c", this->c_frame);
-    for(uint8_t ui8_counter = 0; ui8_counter < this->ui32_maxBar; ui8_counter++){
-      printf("%c", this->c_shadowBar);
-    }
-    printf("%c", this->c_frame);
-  }
   this->ui32_barValue = 0;
 }
 
