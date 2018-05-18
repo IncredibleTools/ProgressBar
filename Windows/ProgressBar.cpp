@@ -40,7 +40,7 @@ void ProgressBar::showProgressBar(uint32_t ui32_increase){
 uint32_t ProgressBar::ui32_roundValue(float f_value){
   uint32_t ui32_compareValue = (uint32_t)f_value;
   float f_decimalValue = (float)f_value - (float)ui32_compareValue;
-  if (f_decimalValue >= 0.8){
+  if (f_decimalValue >= 0.9){
     return ui32_compareValue + 1;
   }
   else{
