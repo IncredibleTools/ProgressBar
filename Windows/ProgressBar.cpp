@@ -24,14 +24,14 @@ void ProgressBar::showProgressBar(uint32_t ui32_increase){
 	printf ("\r");
 	printf("%c", this->c_frame);
 	for(uint32_t ui32_counter = 0; ui32_counter < ui32_newIncrease; ui32_counter++){
-	  printf("%c", this->c_progressBar);
+		printf("%c", this->c_progressBar);
 	}
 	while(ui32_newIncrease < this->ui32_maxBar){
-	  printf("%c", this->c_shadowBar);
-	  ui32_newIncrease++;
+		printf("%c", this->c_shadowBar);
+		ui32_newIncrease++;
 	}
 	if (f_percentageValue == 100){
-	  showConsoleCursor(true);
+		showConsoleCursor(true);
 	}
 	printf("%c", this->c_frame);
 	printf(" - %.2f%c", (float)this->f_percentageValue, 37);
