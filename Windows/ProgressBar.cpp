@@ -4,9 +4,9 @@ ProgressBar::ProgressBar(uint32_t ui32_maxBar, uint8_t ui32_maxValue){
   this->c_shadowBar = 177;
   this->c_progressBar = 219;
   this->c_frame = 179;
-  this->f_percentageValue = 0;
   this->ui32_maxBar = ui32_maxBar;
   this->f_maxConstant = (float)ui32_maxBar/(float)ui32_maxValue;
+	this->f_percentageValue = 0;
   this->ui32_barValue = 0;
 }
 
